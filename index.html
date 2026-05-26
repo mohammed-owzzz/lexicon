@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexicon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;500;700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-layer base-bg">
+        <div class="bg-left" style="background-color: #ffffff;"></div>
+        <div class="bg-right" style="background-color: #000000;"></div>
+    </div>
+    <div class="bg-layer inverted-bg">
+        <div class="bg-left" style="background-color: #000000;"></div>
+        <div class="bg-right" style="background-color: #ffffff;"></div>
+    </div>
+    <div class="split-layout">
+        <div class="left-panel">
+            <div class="panel-content">
+                <div class="header">
+                    <h1 class="logo">Lexicon</h1>
+                    <div class="divider"></div>
+                    <p class="subtitle">Context, perfected.</p>
+                </div>
+                <div class="input-container">
+                    <div class="textarea-wrapper">
+                        <textarea id="promptInput" placeholder="Enter lazy prompt|" spellcheck="false"></textarea>
+                    </div>
+                    <button id="expandBtn">CRAFT <span class="arrow">→</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div id="idleState" class="state-view active">
+                <h2>The architecture of clarity.</h2>
+                <p>A frictionless engine that transforms simple thoughts into precision-engineered instructions for artificial intelligence.</p>
+            </div>
+            <div id="loadingState" class="state-view hidden">
+                <div class="spinner"></div>
+            </div>
+            <div id="errorState" class="state-view hidden">
+                <div class="error-content">
+                    <div class="error-emoji">;(</div>
+                    <h3>CONNECTION FAILED</h3>
+                    <p>The Lexicon engine failed to establish a handshake. Consider trying again, or after several moments</p>
+                    <button id="refreshBtn">RELOAD</button>
+                </div>
+            </div>
+            <div id="resultState" class="state-view hidden">
+                <div class="result-header">
+                    <span id="resultTitle"></span>
+                </div>
+                <div id="summaryText" spellcheck="false"></div>
+                <div class="result-footer">
+                    <button id="copyBtn">COPY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
