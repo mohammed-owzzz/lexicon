@@ -50,6 +50,9 @@ function switchState(stateElement) {
     
     requestAnimationFrame(() => {
         stateElement.classList.add('active');
+        if (window.innerWidth <= 768 && stateElement !== idleState) {
+            document.querySelector('.right-panel').scrollIntoView({ behavior: 'smooth' });
+        }
     });
 }
 
