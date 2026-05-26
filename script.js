@@ -1,5 +1,5 @@
 const CONFIG = {
-    HOST: "https://lexicon-qkra.onrender.com"
+    HOST: "https://lexicon-ust5.onrender.com"
 };
 
 const promptInput = document.getElementById('promptInput');
