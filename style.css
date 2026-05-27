@@ -34,7 +34,8 @@ body.inverted {
     --right-scroll-thumb: #aaaaaa;
     --right-bg-color: #ffffff;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
+*::-webkit-scrollbar { display: none; }
 body { font-family: 'Poppins', sans-serif; height: 100vh; height: 100dvh; overflow: hidden; background-color: transparent; }
 
 .bg-layer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; height: 100dvh; display: flex; pointer-events: none; z-index: -2; }
@@ -63,9 +64,6 @@ body.inverted #idleState h2, body.inverted #idleState p, body.inverted .spinner,
 .textarea-wrapper { width: 100%; position: relative; overflow: hidden; }
 #promptInput { width: 100%; font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 700; background-color: rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 16px; padding: 1.5rem 2rem; outline: none; resize: none; min-height: 150px; max-height: 40vh; overflow-y: auto; line-height: 1.2; color: var(--left-text); caret-color: var(--left-text); transition: color 0.9s cubic-bezier(0.77, 0, 0.175, 1), transform 0.4s var(--elastic-ease), opacity 0.3s var(--smooth-ease), background-color 0.4s ease, border-color 0.4s ease; transform-origin: left center; }
 body.inverted #promptInput { background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); transition: color 0.4s ease 0.1s, transform 0.4s var(--elastic-ease), opacity 0.3s var(--smooth-ease), background-color 0.4s ease, border-color 0.4s ease; }
-#promptInput::-webkit-scrollbar { width: 4px; }
-#promptInput::-webkit-scrollbar-track { background: transparent; }
-#promptInput::-webkit-scrollbar-thumb { background-color: var(--left-sub); border-radius: 10px; }
 #promptInput::placeholder { color: var(--left-text); opacity: 0.4; transition: color 0.4s ease 0.45s, opacity 0.3s var(--smooth-ease), text-shadow 0.3s var(--smooth-ease); }
 body.inverted #promptInput::placeholder { transition-delay: 0.1s, 0s, 0s; }
 
@@ -107,19 +105,14 @@ body.inverted .textarea-wrapper.success-state #promptInput::placeholder { color:
 #copyBtn.copied { background-color: var(--right-text) !important; color: var(--right-bg-color) !important; }
 
 #summaryText { flex-grow: 1; overflow-y: auto; min-height: 0; padding: 2rem 3rem; font-size: 1.15rem; font-weight: 500; line-height: 2; white-space: pre-wrap; color: var(--right-text); text-align: justify; text-justify: inter-word; }
-#summaryText::-webkit-scrollbar { width: 6px; }
-#summaryText::-webkit-scrollbar-track { background: var(--right-scroll-bg); }
-#summaryText::-webkit-scrollbar-thumb { background: var(--right-scroll-thumb); }
 
 .category-label { display: block; font-family: 'Poppins', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: var(--right-sub); border-bottom: 1px solid var(--right-border); padding-bottom: 8px; margin-top: 2.5rem; margin-bottom: 1.25rem; text-transform: uppercase; text-align: left; transition: color 0.9s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.9s cubic-bezier(0.77, 0, 0.175, 1); }
 .category-label:first-child { margin-top: 0; }
-
 
 @media (max-width: 1024px) {
     #promptInput { font-size: 2.5rem; }
     #idleState h2 { font-size: 2rem; }
 }
-
 
 @media (max-width: 768px) and (orientation: portrait) {
     .bg-layer { flex-direction: column; }
@@ -151,7 +144,6 @@ body.inverted .textarea-wrapper.success-state #promptInput::placeholder { color:
     #errorState h3 { font-size: 1.25rem; }
     #errorState { padding: 1.5rem; }
 }
-
 
 @media (max-height: 600px) and (orientation: landscape) {
     .left-panel, .right-panel { padding: 4% 5%; }
